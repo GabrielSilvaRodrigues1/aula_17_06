@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: delimeter
+      MYSQL_DATABASE: fatec
     volumes:
       - db_data:/var/lib/mysql
     ports:

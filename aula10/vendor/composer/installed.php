@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'delimeter/mvc',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'bb8bd09e6b2f3e184d923ad74a833c6d60178dc3',
+        'name' => 'aluno/aula10',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'delimeter/mvc' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'bb8bd09e6b2f3e184d923ad74a833c6d60178dc3',
+        'aluno/aula10' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

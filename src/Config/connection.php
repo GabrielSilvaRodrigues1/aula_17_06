@@ -5,7 +5,7 @@ use PDOException;
 
 class Connection {
     private $host = "db";
-    private $db_name = "delimeter";
+    private $db_name = "fatec";
     private $username = "root";
     private $password = "root";
     private $conn;
