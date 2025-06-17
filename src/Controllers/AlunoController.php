@@ -19,8 +19,7 @@
         }
 
         public function mostrarFormulario(){
-            include_once __DIR__.'/../../view/aluno/form.php';
+            include_once __DIR__.'/../../public/view/aluno/form.php';
         }
-
     }
 ?>

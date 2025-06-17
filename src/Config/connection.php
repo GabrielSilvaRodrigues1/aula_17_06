@@ -4,10 +4,10 @@
     use PDOException;
 
     class connection{
-        private $host ="localhost"; //origem:porta
+        private $host ="db"; //origem:porta
         private $db_name="fatec";
         private $username="root";
-        private $password="";
+        private $password="root";
         private $conn;
 
         public function getConnection(){

@@ -29,7 +29,7 @@ class Aluno
     }
 
     public function getGenero(){
-        return $this->nome;
+        return $this->genero;
     }
 
     public function getId(){

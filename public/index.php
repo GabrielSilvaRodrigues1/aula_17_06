@@ -14,3 +14,5 @@ $route->add('POST', 'api/aluno', [new AlunoController, 'criar']);
 
 //rota tem o Front-End em PHP com Back-end em PHP
 $route->add('GET', 'aluno/cadastro', [new AlunoController, 'mostrarFormulario']);
+
+$route->handleRequest();

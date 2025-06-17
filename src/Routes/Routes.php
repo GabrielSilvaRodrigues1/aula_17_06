@@ -20,7 +20,7 @@ class Routes
         $method = $_SERVER['REQUEST_METHOD'];
         $fullpath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-        $basePath = "/aula10/public";
+        $basePath = "/public";
         $path = substr($fullpath, strlen($basePath));
 
         if ($path === false || $path === '') {
