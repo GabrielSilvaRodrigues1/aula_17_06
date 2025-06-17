@@ -2,7 +2,7 @@
 
 namespace src\Models\Repository;
 
-use src\Config\connection;
+use src\Config\Connection;
 use src\Models\Entity\Aluno;
 use PDO;
 
@@ -14,7 +14,7 @@ class AlunoRepository
     {
 
         //instância da classe connection
-        $database = new connection();
+        $database = new Connection();
 
         //método: estabelecer com a conexão com BD
         $this->conn = $database->getConnection();

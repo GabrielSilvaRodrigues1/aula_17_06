@@ -1,5 +1,5 @@
 {
-    "name": "aluno/aula10",
+    "name": "aluno/aula_17_06",
     "autoload": {
         "psr-4": {
             "src\\": "src/"

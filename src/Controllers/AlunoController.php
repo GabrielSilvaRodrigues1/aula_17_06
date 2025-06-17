@@ -1,5 +1,5 @@
 <?php
-    namespace src\Controllers;
+namespace src\Controllers;
 
     use src\Services\AlunoService;
 
@@ -19,7 +19,7 @@
         }
 
         public function mostrarFormulario(){
-            include_once __DIR__.'/../../public/view/aluno/form.php';
+            include_once '../public/view/aluno/form.php';
         }
     }
 ?>
