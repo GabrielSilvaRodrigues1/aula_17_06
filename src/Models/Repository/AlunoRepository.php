@@ -1,35 +1,29 @@
 <?php
 
-namespace src\Models\Repository;
+namespace Fatec\Mvc\Models\Repository;
 
-use src\Config\Connection;
-use src\Models\Entity\Aluno;
+use Fatec\Mvc\Config\Connection;
+use Fatec\Mvc\Models\Entity\Aluno;
 use PDO;
 
-class AlunoRepository
-{
+class AlunoRepository{
     public $conn;
 
     public function __construct()
     {
-
-        //instância da classe connection
-        $conn = (new Connection())->getConnection();
+        // instância da classe connection
+        $this->conn = (new Connection())->getConnection();
     }
 
     public function save(Aluno $aluno)
     {
-
-        // INJEÇÃO DE SQL
         $query = "INSERT INTO aluno (nome,genero) VALUES(:nome, :genero)";
 
         $nome = $aluno->getNome();
         $genero = $aluno->getGenero();
 
-        //criação do stmt
         $stmt = $this->conn->prepare($query);
 
-        //definição dos parametros 
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":genero", $genero);
 
@@ -38,16 +32,15 @@ class AlunoRepository
 
     public function findAll()
     {
-        $query = "SELECT * FROM ALUNO";
+        $query = "SELECT * FROM aluno";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // todas as classes ou tabelas tem um ID
     public function findByID($id)
     {
-        $query = "SELECT * FROM ALUNO WHERE id =:id";
+        $query = "SELECT * FROM aluno WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
@@ -56,22 +49,18 @@ class AlunoRepository
 
     public function update(Aluno $aluno)
     {
-        //$comando ou $sql
-        $query = "UPDATE aluno SET nome = :nome, genero=:genero WHERE id = :id";
+        $query = "UPDATE aluno SET nome = :nome, genero = :genero WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
 
-        //atribuição variaveis
         $nome = $aluno->getNome();
         $genero = $aluno->getGenero();
         $id = $aluno->getId();
 
-        //atribuir os valores nos parametros
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":genero", $genero);
         $stmt->bindParam(":id", $id);
 
-        //executando a query
         $stmt->execute();
     }
 

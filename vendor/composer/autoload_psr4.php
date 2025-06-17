@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Delimeter\\Mvc\\' => array($baseDir . '/src'),
+    'Fatec\\Mvc\\' => array($baseDir . '/src'),
 );

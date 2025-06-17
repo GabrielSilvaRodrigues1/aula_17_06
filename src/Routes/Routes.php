@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Routes;
+namespace Fatec\Mvc\Routes;
 
 class Routes {
     private $routes = [];
@@ -28,6 +28,17 @@ class Routes {
     public function getRoutes(): array {
         return $this->routes;
     }
+    public function dispatch($method, $path) {
+        $handler = $this->match($method, $path);
+        if ($handler) {
+            call_user_func($handler);
+        } else {
+            http_response_code(404);
+            echo "Rota não encontrada!";
+        }
+    }
 }
-
+// $method = $_SERVER['REQUEST_METHOD'];
+// $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+// $route->dispatch($method, $path);
 ?>

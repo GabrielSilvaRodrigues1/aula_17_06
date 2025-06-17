@@ -1,8 +1,8 @@
 {
-    "name": "delimeter/mvc",
+    "name": "fatec/mvc",
     "autoload": {
         "psr-4": {
-            "Delimeter\\Mvc\\": "src/"
+            "Fatec\\Mvc\\": "src/"
         }
     },
     "authors": [

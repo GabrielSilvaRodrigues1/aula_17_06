@@ -1,5 +1,5 @@
 <?php
-namespace src\Config;
+namespace Fatec\Mvc\Config;
 use PDO;
 use PDOException;
 

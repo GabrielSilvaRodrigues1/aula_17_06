@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Models\Entity;
+namespace Fatec\Mvc\Models\Entity;
 
 class Aluno
 {

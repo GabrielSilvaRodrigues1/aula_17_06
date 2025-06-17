@@ -31,6 +31,8 @@ services:
     volumes:
       - ./public:/var/www/html
       - ./src:/var/www/html/src
+      - ./view:/var/www/html/view
+      - ./vendor:/var/www/html/vendor
       - ./docker/php.ini:/usr/local/etc/php/php.ini
     ports:
       - "8010:80"
