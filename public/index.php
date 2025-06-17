@@ -14,7 +14,12 @@ $alunoController = new AlunoController($alunoService);
 
 $route = new Routes();
 
-// ADICIONE AS ROTAS ANTES DO DISPATCH!
 $route->add('POST', '/api/aluno', [$alunoController, 'criar']);
 $route->add('GET', '/aluno/cadastro', [$alunoController, 'mostrarFormulario']);
+
+// DISPATCH DAS ROTAS:
+$method = $_SERVER['REQUEST_METHOD'];
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+$route->dispatch($method, $path);
 ?>

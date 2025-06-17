@@ -1,34 +1,25 @@
 <?php
-    namespace Fatec\Mvc\Controllers;
+namespace Fatec\Mvc\Controllers;
 
-    use Fatec\Mvc\Services\AlunoService;
-    use Fatec\Mvc\Models\Entity\Aluno;
+use Fatec\Mvc\Services\AlunoService;
 
-    class AlunoController {
-        private $service;
+class AlunoController{
+    private $service;
 
-        public function __construct(AlunoService $service)
-        {
-            $this->service = $service;
-        }
-
-        public function criar(){
-            $data = json_decode(file_get_contents("php://input"));
-            $aluno = new Aluno();
-            $aluno->setNome($data->nome);
-            $aluno->setGenero($data->genero);
-            $this->service->criar($aluno);
-            echo json_encode(['status' => 'success']);
-        }
-
-        public function mostrarFormulario(){
-            try{
-                // Incluir o arquivo de visualização do formulário
-                require_once __DIR__ . '/../../view/aluno/form.php';
-            } catch (Exception $e) {
-                // Tratar exceção, se necessário
-                echo "Erro ao carregar o formulário: " . $e->getMessage();
-            }
-        }
+    public function __construct(AlunoService $service)
+    {
+        $this->service = $service;
     }
+
+    public function criar(){
+        $data =  json_decode(file_get_contents("php://input"));
+        echo json_encode(
+            $this->service->criar($data->nome, $data->genero)
+        );
+    }
+    public function mostrarFormulario(){
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/view/aluno/form.php';
+    }
+
+}
 ?>

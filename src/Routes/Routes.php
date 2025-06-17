@@ -4,7 +4,7 @@ namespace Fatec\Mvc\Routes;
 
 class Routes {
     private $routes = [];
-
+    
     // Adiciona uma rota ao array de rotas
     public function add(string $method, string $path, callable $handler) {
         $this->routes[] = [
